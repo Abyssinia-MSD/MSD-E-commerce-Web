@@ -18,7 +18,7 @@ const Home = () => {
             <VendorList/>
             <SectionHeader title="Our Products" subtitle="View some of our best products"/>
             <ProductList/>
-            
+
             
         </div>
     )

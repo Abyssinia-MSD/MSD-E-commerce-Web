@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-const colors=["#626f1a","#E3C2A0", "#AF8C3E"]
+const colors=["#d463de","pink", "#68c4cd"]
 const CatItem = styled.div`
     background-color: ${ (props)=> colors[props.bg%3]};
      
