@@ -1,0 +1,22 @@
+*{
+    font-family: 'Urbanist', sans-serif !important;
+  }
+html{
+    overflow-x: hidden;
+}
+.row{
+    margin: 0;
+}
+.nav-det *{
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+}
+.o-row{
+    height: 90vh;
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+.bg-alert{
+    background-color: #AF8C3E;
+}
