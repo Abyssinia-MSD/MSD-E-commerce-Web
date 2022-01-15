@@ -14,8 +14,6 @@ const ImgContainer = styled.div`
     margin-left: 20%; 
     display: block;
     border: 2px solid #${(props)=>props.border};
-    
-
 `;
 
 const Onboarding = () => {

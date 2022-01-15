@@ -20,3 +20,54 @@ html{
 .bg-alert{
     background-color: #AF8C3E;
 }
+a{
+    text-decoration: none !important;
+    color: initial !important;
+}
+.cat-box{
+    padding: 2rem 2rem;
+    background-color: #AF8C3E;
+}
+.price-box{
+    position: absolute;
+    right: 20px;
+    padding: 1rem;
+    background-color: #AF8C3E;
+    color: white;
+    border-radius: 0.5rem;
+    
+    bottom: 20px;
+}
+.price-box h5{
+    margin-bottom: 0;
+}
+.p-link{
+    display: none !important;
+}
+.shop-now{
+    text-align: center;
+    width: max-content !important;
+    padding: 0.5rem 2rem;
+    margin: 0 auto;
+    background-color: #AF8C3E;
+}
+.bg-tran{
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+.pitem:hover .price-box {
+    display: none;
+
+}
+.pitem:hover .p-link {
+    display: flex !important;
+
+}
+.circle-icon{
+    border-radius: 50%;
+    margin: 1rem 0;
+}
+.vendorImg{
+    width: 100%;
+    border-radius: 50%;
+}
