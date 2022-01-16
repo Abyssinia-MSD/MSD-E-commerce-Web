@@ -18,11 +18,11 @@ html{
     flex-wrap: nowrap;
 }
 .bg-alert{
-    background-color: #AF8C3E;
+    background-color: pink;
 }
 a{
     text-decoration: none !important;
-    color: initial !important;
+    /* color: initial !important; */
 }
 .cat-box{
     padding: 2rem 2rem;
