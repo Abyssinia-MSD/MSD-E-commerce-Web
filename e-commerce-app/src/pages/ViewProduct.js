@@ -2,10 +2,9 @@ import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState} from "react";
-import { publicRequest } from "../requests";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../redux/cardRedux";
-import { Products } from "../data";
+import axios from 'axios'
 
 const Container = styled.div``;
 
@@ -114,17 +113,28 @@ const Button = styled.button`
 const ViewProduct = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
-  const [product, setProduct] = useState(Products[0]);
+  const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
   const dispatch = useDispatch()
   const state = useSelector(state => state.cart)
   console.log(state)
-  
- 
- 
-   let obj = Products.find(o => o.id === id);
+
+  useEffect(() => {
+    const fetchUrl= 'http://127.0.0.1:8000/product_list/'+id
+    const fetch =async()=>{
+      try {
+          const res= await axios.get(fetchUrl);
+           setProduct( res.data)
+          
+      } catch (error) {
+          
+      }
+  }
+    fetch()
+  }, [id])
+   
    
 
   const handleQuantity = (type) => {
@@ -136,37 +146,38 @@ const ViewProduct = () => {
   };
 
   const handleClick = () => {
-    dispatch(addProduct({ ...obj, quantity, color, size }))
-    console.log()
+    dispatch(addProduct({ ...product, quantity, color, size }))
+   
   
       
   
   };
+  console.log(product)
   return (
     <Container>
-     
+    
       <Wrapper>
         <ImgContainer>
-          <Image src={"http://localhost:3000/"+obj.image} />
+          <Image src={product.image} />
         </ImgContainer>
         <InfoContainer>
-          <Title>{obj.name}</Title>
+          <Title>{product.name}</Title>
           
-          <Price>$ {obj.price}</Price>
+          <Price>$ {product.price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              {obj.color.map((c) => (
+              {product.color?.map((c) => (
                 <FilterColor color={c} key={c} onClick={() => setColor(c)} />
               ))}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              {/* <FilterSize onChange={(e) => setSize(e.target.value)}>
+              <FilterSize onChange={(e) => setSize(e.target.value)}>
                 {product.size?.map((s) => (
                   <FilterSizeOption key={s}>{s}</FilterSizeOption>
                 ))}
-              </FilterSize> */}
+              </FilterSize>
             </Filter>
           </FilterContainer>
           <AddContainer>

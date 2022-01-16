@@ -8,11 +8,13 @@ import SectionHeader from '../components/SectionHeader'
 import ProductList from '../components/ProductList'
 import { useState } from 'react'
 
+const categList= ["Men", "Women" , "Kids"]
+
 const AllProducts = () => {
     const location= useLocation()
     const pathname= location.pathname.split('/')
     const categ = pathname.length ===3? true : false;
-    const catType = {category: pathname[2]}
+    const catType = {category: categList.indexOf( pathname[2])}
     
     const [filters, setfilters] = useState({})
     const handleFilters = (e) => {
@@ -32,7 +34,7 @@ const AllProducts = () => {
                     {
                         categ? '' : <select className='p-2 mr-2 col-sm-4 ' name="category" onChange={handleFilters}>
                         {categoryList.map((items)=>(
-                            <option key={items.id} value={items.title}>{items.title}</option>
+                            <option key={items.id} value={items.id}>{items.title}</option>
                         ))}
 
                     </select>
@@ -47,7 +49,7 @@ const AllProducts = () => {
                 </div>
                 <div className='col-sm-6  align-items-center  row'>
                     <div className='row p-2 border border-dark rounded '>
-                        <input name="name" placeholder='Search by Product Name' className='col-10 border-0' onChange={handleFilters}></input>
+                        <input name="name" placeholder='Search by Product Name'  className='col-10 border-0' onChange={handleFilters}></input>
                         <div className=' col-2 d-flex align-items-center p-0 justify-content-end text-right'><SearchIcon/></div>
                     </div>
                     

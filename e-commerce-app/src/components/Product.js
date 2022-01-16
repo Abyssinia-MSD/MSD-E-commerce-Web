@@ -23,7 +23,7 @@ const Product = ({item}) => {
     const [favorited, setFavorited]= useState(false)
     return (
         <div className='col-sm-4 p-5 m-0'>
-            <ProductItem className='pitem' bg={"http://localhost:3000/"+item.image} >
+            <ProductItem className='pitem' bg={item.image} >
 
                 <div className='price-box' >
                     <h5>{item.price}</h5>

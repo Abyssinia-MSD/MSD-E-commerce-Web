@@ -13,31 +13,42 @@ import axios from 'axios'
 
 
 const ProductList = ({limit,filters,category}) => {
-    // const dispatch= useDispatch()
-
-    // const fetch =async()=>{
-    //     try {
-    //         const res= await axios.get('https://pokeapi.co/api/v2/pokemon/squirtle/');
-    //         console.log(res.data)
-    //         dispatch(fetchProducts(res.data))
-            
-    //     } catch (error) {
-            
-    //     }
-    // }
-    // fetch()
-    // const products = useSelector(state => state.products.allProducts)
-    const products= Products
-    const productList= category===''? products : ( products.filter((item)=>
-    Object.entries(category).every(([key,value]) => 
-    item[key].includes(value)
-)))
+    const fetchUrl= 'http://127.0.0.1:8000/product_list/'
+    const dispatch= useDispatch()
+    useEffect(() => {
+        const fetch =async()=>{
+            try {
+                const res= await axios.get(fetchUrl);
+              
+                dispatch(fetchProducts(res.data))
+                
+            } catch (error) {
+                
+            }
+        }
+        fetch()
+        
+    }, [fetchUrl,dispatch])
+  
+    
+    const products = useSelector(state => state.products.allProducts)
+   
+   
+        const [productList, setproductList] = useState(products)
+        useEffect(() => {
+            setproductList(
+                category===''? products : ( products.filter((item)=>
+                Object.entries(category).every(([key,value]) => 
+                value.toString()===item[key].toString()
+            )))
+            );
+        }, [category, products])
     const [filterdData, setfilterdData] = useState(productList)
     useEffect(() => {
         setfilterdData(
             productList.filter((item)=>
                 Object.entries(filters).every(([key,value]) => 
-                item[key] ==="name"? item[key].toLowerCase().match(value.toLowerCase()) : item[key].includes(value)
+                key ==="name"? item[key].toLowerCase().match(value.toLowerCase()) : value.toString()===item[key].toString()
             ))
         );
     }, [filters, productList])
@@ -48,7 +59,7 @@ const ProductList = ({limit,filters,category}) => {
             {filterdData.slice(0, limit==="all"? filterdData.length : limit).map((item)=>(
                  <Product item={item} key={item.id}/>
             ))}
-            {filterdData.length>6 & category==='' && filters===''?  <Link to={'/products'}>
+            {filterdData.length>1 & category==='' && filters===''?  <Link to={'/products'}>
                 <div className='viewMore mx-auto'>
                     <h6 className='mb-0'>View More </h6>
                 </div>
