@@ -8,13 +8,13 @@ import {useSelector} from 'react-redux'
 
 
 const Navbar = () => {
-    const cart = useSelector(state => state.cart)
-    console.log(cart)
+    const quantity = useSelector(state => state.cart.quantity)
+    
     return (
-        <div className='row p-3 px-5 align-items-center justify-content-between'>
+        <div className='row p-3 px-5 bg-white align-items-center justify-content-between'>
             <div className='col-6'>
                 <Link to="/">
-                    <h3 className='font-weight-bolder'>CuSho</h3>
+                    <h3 className='font-weight-bolder'>Abyssinia</h3>
                 </Link>
 
 
@@ -22,11 +22,13 @@ const Navbar = () => {
             
             <div className='col-6 d-flex nav-det justify-content-end'>
                
-                <Badge badgeContent={4} className='bg-cusho'>
-                    <LocalMallOutlinedIcon htmlColor='#00000045' />
-                </Badge>
+                <Link to="/cart">
+                    <Badge badgeContent={quantity} className='bg-cusho'>
+                        <LocalMallOutlinedIcon htmlColor='#00000045' />
+                    </Badge>
+                </Link>
                 <Link to="/register"><p>Sign Up</p></Link>
-                <p>Login</p>
+                <Link to="/login"><p>Login</p></Link>
             
                 
             </div>

@@ -99,7 +99,72 @@ footer a{
     margin-left: 20%; 
     display: block;
     border: 2px solid #AF8C3E;
-}
+}oooooooo
 .cursor-pointer{
     cursor: pointer;
 }
+.order-box img{
+    max-height: 30vh;
+}
+.slider-container{
+    overflow-x: scroll;
+}
+.order-box{
+    margin: 1rem 3rem;
+    width: 40%;
+    padding: 2rem;
+    border: 1px solid #AF8C3E;
+}
+.scrol-part{
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+.fileContainer{
+    flex-direction: row !important;
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+.component-container{
+    max-width: 40% !important;
+}
+
+.SignUpContainer{
+    /* background-image: url(../../public/assets/images/signup.jpg); */
+    height: 100vh;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.SignUpform{
+    width: 40%;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.fw-700{
+    font-weight: 700;
+}
+
+.input-signup{
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.fileContainer .chooseFileButton{
+    width: 40% !important;
+}
+.side-by div{
+    width: 45%;
+}
+
+.d-mynone{
+    display: none;
+}
+

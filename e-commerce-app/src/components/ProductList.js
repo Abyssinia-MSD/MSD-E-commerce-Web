@@ -3,9 +3,32 @@ import { Link } from 'react-router-dom'
 import { Products } from '../data'
 import Product from './Product'
 import { useState,useEffect } from 'react'
+import {useSelector, useDispatch} from 'react-redux'
+import { fetchProducts } from '../redux/productRedux'
+import axios from 'axios'
+
+
+
+
+
 
 const ProductList = ({limit,filters,category}) => {
-    const productList= category===''? Products : ( Products.filter((item)=>
+    // const dispatch= useDispatch()
+
+    // const fetch =async()=>{
+    //     try {
+    //         const res= await axios.get('https://pokeapi.co/api/v2/pokemon/squirtle/');
+    //         console.log(res.data)
+    //         dispatch(fetchProducts(res.data))
+            
+    //     } catch (error) {
+            
+    //     }
+    // }
+    // fetch()
+    // const products = useSelector(state => state.products.allProducts)
+    const products= Products
+    const productList= category===''? products : ( products.filter((item)=>
     Object.entries(category).every(([key,value]) => 
     item[key].includes(value)
 )))
@@ -17,7 +40,7 @@ const ProductList = ({limit,filters,category}) => {
                 item[key] ==="name"? item[key].toLowerCase().match(value.toLowerCase()) : item[key].includes(value)
             ))
         );
-    }, [filters])
+    }, [filters, productList])
     
     return (
         

@@ -1,8 +1,9 @@
 import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import { publicRequest } from "../requests";
+import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../redux/cardRedux";
 import { Products } from "../data";
 
@@ -117,19 +118,14 @@ const ViewProduct = () => {
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
-  console.log(product)
+  const dispatch = useDispatch()
+  const state = useSelector(state => state.cart)
+  console.log(state)
+  
  
  
-
-//   useEffect(() => {
-//     const getProduct = async () => {
-//       try {
-//         const res = await publicRequest.get("/products/find/" + id);
-//         setProduct(res.data);
-//       } catch {}
-//     };
-//     getProduct();
-//   }, [id]);
+   let obj = Products.find(o => o.id === id);
+   
 
   const handleQuantity = (type) => {
     if (type === "dec") {
@@ -140,8 +136,10 @@ const ViewProduct = () => {
   };
 
   const handleClick = () => {
+    dispatch(addProduct({ ...obj, quantity, color, size }))
+    console.log()
   
-      addProduct({ ...product, quantity, color, size })
+      
   
   };
   return (
@@ -149,16 +147,16 @@ const ViewProduct = () => {
      
       <Wrapper>
         <ImgContainer>
-          <Image src={"http://localhost:3000/"+product.image} />
+          <Image src={"http://localhost:3000/"+obj.image} />
         </ImgContainer>
         <InfoContainer>
-          <Title>{product.name}</Title>
+          <Title>{obj.name}</Title>
           
-          <Price>$ {product.price}</Price>
+          <Price>$ {obj.price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              {product.color.map((c) => (
+              {obj.color.map((c) => (
                 <FilterColor color={c} key={c} onClick={() => setColor(c)} />
               ))}
             </Filter>

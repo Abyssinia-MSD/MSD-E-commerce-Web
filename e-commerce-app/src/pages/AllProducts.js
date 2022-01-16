@@ -37,7 +37,7 @@ const AllProducts = () => {
 
                     </select>
                     }
-                    <select className='p-2 mr-2 col-sm-4 ' name="size" onChange={handleFilters}>
+                    <select className='p-2 mr-2 d-none col-sm-4 ' name="size" onChange={handleFilters}>
                         {categoryList.map((items)=>(
                             <option key={items.id} value={items.title}>{items.title}</option>
                         ))}

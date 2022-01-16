@@ -2,7 +2,7 @@ import { Button } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import { useState } from 'react';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -23,7 +23,7 @@ const Product = ({item}) => {
     const [favorited, setFavorited]= useState(false)
     return (
         <div className='col-sm-4 p-5 m-0'>
-            <ProductItem className='pitem' bg={item.image} >
+            <ProductItem className='pitem' bg={"http://localhost:3000/"+item.image} >
 
                 <div className='price-box' >
                     <h5>{item.price}</h5>
@@ -31,7 +31,7 @@ const Product = ({item}) => {
                 
                     <div className=' flex-column m-0 p-link justify-content-center bg-tran w-100 h-100 align-items-center'>
                         <Link className='p-2 circle-icon bg-white' to={`/product/${item.id}`} >       
-                            <AddCircleOutlineIcon htmlColor='#AF8C3E'></AddCircleOutlineIcon>  
+                            <LocalMallOutlinedIcon htmlColor='#AF8C3E'></LocalMallOutlinedIcon>  
                         </Link>
                         <div className='p-2 circle-icon bg-white' onClick={()=>{setFavorited(
                              !favorited

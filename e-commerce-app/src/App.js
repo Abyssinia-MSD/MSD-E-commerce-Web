@@ -18,7 +18,7 @@ import {
 
 
 function App() {
-  const user= false
+  const user= true
   return (
     
     <Router>
@@ -29,7 +29,7 @@ function App() {
         <Route path="/products/*" element={<AllProducts />} />
         <Route path="/product/*" element={<ViewProduct />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={user ? <Navigate to="/" /> :<SignIn />}>
+        <Route path="/login" element={<SignIn />}>
               
         </Route>
         <Route path="/register" element={<SignUp />} />
