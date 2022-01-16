@@ -11,7 +11,9 @@ const CatItem = styled.div`
     transform: scale(0.5);
     height: 50vh;
     width: 50vh;
+
     &:hover{
+        transition: all ease;
         transform: scale(1);
 
     }

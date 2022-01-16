@@ -24,17 +24,17 @@ export const onboarding=[
 export const categoryList= [
     {
         id: "1",
-        title: "Womens",
+        title: "Women",
        
     },
     {
         id: "2",
-        title: "Mens",
+        title: "Men",
 
     },
     {
         id: "3",
-        title: "Accessories",
+        title: "Kids",
     }
 ]
 
@@ -82,27 +82,99 @@ export const Products =[
         id: "1",
         image: "assets/images/onboarding1.png",
         name: "Adey Ababa Dress",
-        price: "5000birr",
+        price: "5000",
         category: "Women",
-        color: "blue",
+        color: [
+            "blue","yellow"
+        ],
         size: "M"
     },
     {
         id: "2",
         image: "assets/images/onboarding2.png",
         name: "timket dress",
-        price: "5000birr",
+        price: "5000",
         category: "Women",
-        color: "red",
+        color: [
+            "blue","yellow"
+        ],
         size: "L"
     },
     {
         id: "3",
         image: "assets/images/onboarding3.png",
         name: "gena dress",
-        price: "5000birr",
+        price: "5000",
         category: "Women",
-        color: "black",
+        color: [
+            "blue","yellow"
+        ],
+        size: "XL"
+    },
+    {
+        id: "4",
+        image: "assets/images/onboarding1.png",
+        name: "Adey Ababa Dress",
+        price: "5000",
+        category: "Women",
+        color: [
+            "blue","yellow"
+        ],
+        size: "M"
+    },
+    {
+        id: "5",
+        image: "assets/images/onboarding2.png",
+        name: "timket dress",
+        price: "5000",
+        category: "Women",
+        color: [
+            "blue","yellow"
+        ],
+        size: "L"
+    },
+    {
+        id: "6",
+        image: "assets/images/onboarding3.png",
+        name: "gena dress",
+        price: "5000",
+        category: "Women",
+        color: [
+            "blue","yellow"
+        ],
+        size: "XL"
+    },
+    {
+        id: "7",
+        image: "assets/images/onboarding1.png",
+        name: "Adey Ababa Dress",
+        price: "5000",
+        category: "Women",
+        color: [
+            "blue","yellow"
+        ],
+        size: "M"
+    },
+    {
+        id: "8",
+        image: "assets/images/onboarding2.png",
+        name: "timket dress",
+        price: "5000",
+        category: "Men",
+        color: [
+            "blue","yellow"
+        ],
+        size: "L"
+    },
+    {
+        id: "9",
+        image: "assets/images/onboarding3.png",
+        name: "gena dress",
+        price: "5000",
+        category: "Men",
+        color: [
+            "blue","yellow"
+        ],
         size: "XL"
     },
 

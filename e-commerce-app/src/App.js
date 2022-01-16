@@ -4,6 +4,9 @@ import ViewProduct from "./pages/ViewProduct";
 import Cart from "./pages/Cart";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import Alert from "./components/Alert";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import {
   BrowserRouter as Router,
   Routes,
@@ -17,7 +20,10 @@ import {
 function App() {
   const user= false
   return (
+    
     <Router>
+      <Alert/>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products/*" element={<AllProducts />} />
@@ -31,11 +37,12 @@ function App() {
         <main style={{ padding: "1rem" }}>
           <p>There's nothing here!</p>
         </main>
-      }
-    />
+        }/>
+        
         
         
       </Routes>
+      <Footer/>
     </Router>
   );
 }

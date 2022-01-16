@@ -22,7 +22,7 @@ const Vendor = ({vendor}) => {
                 <h6 className='font-weight-bolder'>{vendor.title}</h6>
                 <p className='mb-0'>{vendor.location}</p>
 
-
+ 
             </div>
             <div className='col-4'>
                 <img className='vendorImg' src={vendor.logo} alt={vendor.title}/>
