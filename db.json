@@ -4,99 +4,67 @@
         "image": "assets/images/onboarding1.png",
         "name": "Adey Ababa Dress",
         "price": "5000",
-        "category": "Women",
-        "color": [
-            "blue","yellow"
-        ],
-        "size": "M"
+        "category": "Women"
     },
     {
         "id": "2",
         "image": "assets/images/onboarding2.png",
         "name": "timket dress",
         "price": "5000",
-        "category": "Women",
-        "color": [
-            "blue","yellow"
-        ],
-        "size": "L"
+        "category": "Women"
     },
     {
         "id": "3",
         "image": "assets/images/onboarding3.png",
         "name": "gena dress",
         "price": "5000",
-        "category": "Women",
-        "color": [
-            "blue","yellow"
-        ],
-        "size": "XL"
+        "category": "Women"
     },
     {
         "id": "4",
         "image": "assets/images/onboarding1.png",
         "name": "Adey Ababa Dress",
         "price": "5000",
-        "category": "Women",
-        "color": [
-            "blue","yellow"
-        ],
-        "size": "M"
+        "category": "Women"
     },
     {
         "id": "5",
         "image": "assets/images/onboarding2.png",
         "name": "timket dress",
         "price": "5000",
-        "category": "Women",
-        "color": [
-            "blue","yellow"
-        ],
-        "size": "L"
+        "category": "Women"
     },
     {
         "id": "6",
         "image": "assets/images/onboarding3.png",
         "name": "gena dress",
         "price": "5000",
-        "category": "Women",
-        "color": [
-            "blue","yellow"
-        ],
-        "size": "XL"
+        "category": "Women"
     },
     {
         "id": "7",
         "image": "assets/images/onboarding1.png",
         "name": "Adey Ababa Dress",
         "price": "5000",
-        "category": "Women",
-        "color": [
-            "blue","yellow"
-        ],
-        "size": "M"
+        "category": "Women"
+        
     },
     {
         "id": "8",
         "image": "assets/images/onboarding2.png",
         "name": "timket dress",
         "price": "5000",
-        "category": "Men",
-        "color": [
-            "blue","yellow"
-        ],
-        "size": "L"
+        "category": "Men"
+        
     },
     {
         "id": "9",
         "image": "assets/images/onboarding3.png",
         "name": "gena dress",
         "price": "5000",
-        "category": "Men",
-        "color": [
-            "blue","yellow"
-        ],
-        "size": "XL"
+        "category": "Men"
+        
+       
     }
 
 ]
